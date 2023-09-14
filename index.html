@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DLTube</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+        }
+        
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        button[type="submit"] {
+            padding: 12px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        
+        .contact {
+            margin-top: 30px;
+            font-size: 14px;
+            text-align: center;
+            color: #777;
+        }
+
+        select {
+            width: 85px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>DLTube</h1>
+    <form action="/" method="post">
+        <br>
+        <label for="youtube_url">Enter YouTube URL</label>
+        <input type="text" id="youtube_url" name="youtube_url" required>
+        <br>
+        <br>
+        <label for="format">Select Format</label>
+        <select id="format" name="format">
+            <option value="mp3">MP3</option>
+            <option value="mp4">MP4</option>
+        </select>
+        <br>
+        <br>
+        <button type="submit">Download</button>
+        {% if invalid_url %}
+            <p class="error-message">Invalid URL</p>
+        {% endif %}
+    </form>
+    <p class="contact"><a href="mailto:megalonsba@gmail.com">Email</a></p>
+    <p class="contact"><a href="https://ko-fi.com/megalonvii">Donate</a></p>
+</body>
+</html>
