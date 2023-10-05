@@ -23,7 +23,7 @@ def index():
             invalid_url = True
     else:
         invalid_url = False
-    return render_template("docs/index.html", invalid_url=invalid_url)
+    return render_template("index.html", invalid_url=invalid_url)
 
 def is_valid_url(url):
     parsed_url = urlparse(url)
